@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portfolio | Academic Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #2c3e50;
+            --bg-light: #f4f7f6;
+            --card-bg: #ffffff;
+            --text-main: #333;
+            --text-muted: #666;
+            --accent: #e74c3c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* --- Layout Structure --- */
+        .container {
+            display: grid;
+            grid-template-columns: 350px 1.5fr;
+            min-height: 100vh;
+        }
+
+        /* --- Left Side: ID Panel --- */
+        .left-panel {
+            background: var(--secondary-color);
+            padding: 60px 20px;
+            height: 100vh;
+            position: sticky;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            box-shadow: 4px 0 15px rgba(197, 189, 189, 0.1);
+        }
+
+        .id-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 30px 20px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid var(--primary-color);
+            margin-bottom: 20px;
+            object-fit: cover;
+        }
+
+        .id-card h2 { margin-bottom: 5px; font-size: 1.5rem; }
+        .id-card p { font-size: 0.9rem; color: #cbd5e0; margin-bottom: 15px; }
+
+        .info-list {
+            text-align: left;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 20px;
+        }
+
+        .info-item { margin-bottom: 12px; display: flex; align-items: center; }
+        .info-item i { width: 25px; color: var(--primary-color); }
+
+        /* --- Right Side: Content --- */
+        .right-panel {
+            padding: 0;
+            background: var(--bg-light);
+        }
+
+        nav {
+            background: white;
+            padding: 20px 50px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: flex-end;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-main);
+            margin-left: 30px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: var(--primary-color); }
+
+        section {
+            padding: 80px 50px;
+            min-height: auto;
+        }
+
+        h2.section-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+        }
+
+        /* --- Skills (Progress Bars) --- */
+        .skill-group { margin-bottom: 20px; }
+        .skill-bar {
+            background: #ddd;
+            height: 10px;
+            border-radius: 5px;
+            margin-top: 8px;
+        }
+        .skill-progress {
+            background: var(--primary-color);
+            height: 100%;
+            border-radius: 5px;
+            transition: 1s ease-in-out;
+        }
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        .skill-bar { margin-top: 1rem; background: rgba(255,255,255,0.1); border-radius: 10px; height: 10px; }
+        .skill-progress { 
+            height: 100%; 
+            border-radius: 10px; 
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); 
+        }
+
+        /* --- Education (Table) --- */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        th, td { padding: 15px; text-align: left; border-bottom: 1px solid #eee; }
+        th { background: var(--primary-color); color: white; }
+
+        
+       
+
+       
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <aside class="left-panel">
+        <div class="id-card">
+            <img src="kriti.jpg" alt="Student Photo" class="profile-img">
+            <h2>Kriti Kumari</h2>
+            <p>B.tech in Computer Science and engineering</p>
+            
+            <div class="info-list">
+                
+                <div class="info-item"><i class="fas fa-university"></i> College:Government engineering college west champaran</div>
+                <div class="info-item"><i class="fas fa-envelope"></i> kritikumari0712@gmail.com</div>
+                <div class="info-item"><i class="fas fa-phone"></i>9852971504</div>
+                <div class="info-item"><i class="fas fa-map-marker-alt"></i> Bettiah</div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="right-panel">
+        <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#education">Education</a>
+            
+        </nav>
+
+        <section id="about">
+            <h2 class="section-title">About Me</h2>
+            <p>Hello!my name is kriti kumari,I am a passionate in b.tech in Computer Science and engineering  with a focus on web Development . i have few knowledge in html,css and github.</p>
+            <p style="margin-top: 15px;">currently i am looking for project to boost my skill and learn from team work.</p>
+        </section>
+
+        <section id="skills">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-container">
+                <div class="glass-card">
+                    <h3><i class="fab fa-html5"></i> HTML</h3>
+                    <img src="https://static.vecteezy.com/system/resources/thumbnails/051/336/399/small/html-programming-transparent-logo-free-png.png" style="width:25% ;">
+                    <div class="skill-bar"><div class="skill-progress" style="width: 20%;"></div></div>
+                </div>
+                <div class="glass-card">
+                    <h3><i class="fab fa-js"></i> JavaScript</h3>
+                    <img src="https://static.vecteezy.com/system/resources/thumbnails/027/127/463/small_2x/javascript-logo-javascript-icon-transparent-free-png.png" style="width:25% ;">
+                    <div class="skill-bar"><div class="skill-progress" style="width: 20%;"></div></div>
+                </div>
+                <div class="glass-card">
+                    <h3><i class="fab fa-html5"></i> css</h3>
+                    <img src="https://img.icons8.com/nolan/1200/css3.jpg" style="width: 25% ;">
+                    <div class="skill-bar"><div class="skill-progress" style="width: 20%;"></div></div>
+                </div>
+                <div class="glass-card">
+                    <h3><i class="fab fa-github"></i> Github</h3>
+                    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111432.png" style="width: 25% ;">
+                    <div class="skill-bar"><div class="skill-progress" style="width: 20%;"></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2 class="section-title">Education</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>Degree/Course</th>
+                        <th>Institution</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2021-2022</td>
+                        <td>Matriculation</td>
+                        <td>CBSE</td>
+                        <td>91.2%</td>
+                    </tr>
+                    <tr>
+                        <td>2022-2024</td>
+                        <td>Intermediate</td>
+                        <td>BSEB</td>
+                        <td>83.8%</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+
+        
+
+        
+    </main>
+</div>
+
+<script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            document.querySelector(targetId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
